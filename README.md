@@ -101,7 +101,7 @@
 ```json
 {
   "name": "string",
-  "age": "number",
+  "age": "string",
   "syze": "string",
   "photo": "string"
 }
@@ -139,7 +139,7 @@
     {
       "id": 1,
       "name": "string",
-      "age": "number",
+      "age": "string",
       "syze": "string",
       "photo": "string"
     }
