@@ -148,6 +148,12 @@ app.get("/pets", (req, res) => {
 app.use(jsonServerMiddleware);
 
 app.listen(port, () => {
-  console.log(`Servidor rodando em 
+  console.log(`Servidor rodando localmente em 
 http://localhost:${port}`);
+
+  console.log("\n");
+
+  console.log(
+    "Servidor rodando no render em https://api-pet-connect-unisinos.onrender.com/"
+  );
 });

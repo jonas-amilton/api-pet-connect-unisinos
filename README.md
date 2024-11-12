@@ -2,7 +2,13 @@
 
 ### Base URL
 
+- Localhost
+
 `http://localhost:3000`
+
+- Render
+
+`https://api-pet-connect-unisinos.onrender.com/`
 
 ## Endpoints
 
