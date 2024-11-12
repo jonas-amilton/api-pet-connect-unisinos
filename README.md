@@ -1,45 +1,157 @@
-## Deploy JSON Server to Vercel
+# API Endpoints
 
-A template to deploy [JSON Server](https://github.com/typicode/json-server) to [Vercel](https://vercel.com), allow you to run fake REST API online!
+### Base URL
 
-Demo from this repository: 
+`http://localhost:3000`
 
-1. https://json-server-in.vercel.app
-2. https://json-server-in.vercel.app/api/posts
+## Endpoints
 
-![Powered by Vercel](https://images.ctfassets.net/e5382hct74si/78Olo8EZRdUlcDUFQvnzG7/fa4cdb6dc04c40fceac194134788a0e2/1618983297-powered-by-vercel.svg)
+### Root
 
-### How to use
+- **GET /**
 
-1. Click "**Use this template**" or clone this repository.
-2. Update or use the default [`db.json`](./db.json) in the repository.
-3. Sign Up or login into [Vercel](https://vercel.com).
-4. From the Vercel dashboard, click "**+ New Project**" then "**Import**" your repository.
-5. In the "**Configure Project**" screen, leave everything default and click "**Deploy**".
-6. Wait until deployment is done, and your own JSON server is ready to serve!
+- Retorna uma mensagem de boas-vindas.
 
-## Default `db.json`
+**Exemplo de resposta:**
+
+```json
+"Hello, World!!!"
+```
+
+### Users
+
+- **POST /users**
+
+- Cria um novo usuário.
+
+**Parâmetros do corpo da requisição:**
 
 ```json
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+  "email": "string",
+  "username": "string",
+  "password": "string",
+  "isAdmin": "boolean"
 }
 ```
 
-## Enable write operations
+**Exemplo de resposta (sucesso):**
 
-By default, only GET operation is allowed, thanks to the contribution by [@VicAv99](https://www.github.com/VicAv99) at [#6](https://github.com/kitloong/json-server-vercel/issues/6), we can now enable write operations as well.
+```json
+{
+  "success": true,
+  "message": "Usuário adicionado com sucesso"
+}
+```
 
-You can find the example code in [`api/server.js`](./api/server.js).
+**Exemplo de resposta (falha - usuário já existe):**
 
-## Reference
+```json
+{
+  "success": false,
+  "message": "Usuário já existe"
+}
+```
 
-1. https://github.com/typicode/json-server
-2. https://vercel.com
-3. https://shadowsmith.com/how-to-deploy-an-express-api-to-vercel
+- **POST /users/login**
+
+- Realiza o login de um usuário.
+
+**Parâmetros do corpo da requisição:**
+
+```json
+{
+  "username": "string",
+  "password": "string"
+}
+```
+
+**Exemplo de resposta (sucesso):**
+
+```json
+{
+  "success": true,
+  "message": "Login bem-sucedido",
+  "userInfo": {
+    "id": 1,
+    "email": "string",
+    "username": "string",
+    "isAdmin": true
+  }
+}
+```
+
+**Exemplo de resposta (falha - credenciais inválidas):**
+
+```json
+{
+  "success": false,
+  "message": "Credenciais inválidas"
+}
+```
+
+### Pets
+
+- **POST /pets**
+
+- Cria um novo pet.
+
+**Parâmetros do corpo da requisição:**
+
+```json
+{
+  "name": "string",
+  "age": "number",
+  "syze": "string",
+  "photo": "string"
+}
+```
+
+**Exemplo de resposta (sucesso):**
+
+```json
+{
+  "success": true,
+  "message": "Pet adicionado com sucesso"
+}
+```
+
+**Exemplo de resposta (falha - pet já foi cadastrado):**
+
+```json
+{
+  "success": false,
+  "message": "Pet já foi cadastrado"
+}
+```
+
+- **GET /pets**
+
+- Retorna a lista de todos os pets cadastrados.
+
+**Exemplo de resposta (sucesso):**
+
+```json
+{
+  "success": true,
+  "message": "Pets listados com sucesso",
+  "data": [
+    {
+      "id": 1,
+      "name": "string",
+      "age": "number",
+      "syze": "string",
+      "photo": "string"
+    }
+  ]
+}
+```
+
+**Exemplo de resposta (falha - nenhum pet cadastrado):**
+
+```json
+{
+  "success": false,
+  "message": "Nenhum pet cadastrado!"
+}
+```
