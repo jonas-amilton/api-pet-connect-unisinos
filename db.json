@@ -1,9 +1,76 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+  "users": [
+    {
+      "id": 1,
+      "email": "a@a.com",
+      "username": "admin",
+      "password": "senha",
+      "isAdmin": true
+    },
+    {
+      "id": 2,
+      "email": "b@b.com",
+      "username": "Joao",
+      "password": "senha",
+      "isAdmin": false
+    },
+    {
+      "id": 4,
+      "email": "c@c.com",
+      "username": "Lucas",
+      "password": "senha",
+      "isAdmin": false
+    },
+    {
+      "id": 5,
+      "email": "teste",
+      "username": "teste",
+      "password": "senha",
+      "isAdmin": true
+    }
   ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+  "pets": [
+    {
+      "id": 1,
+      "name": "Pretinha",
+      "age": "Adulto",
+      "syze": "Porte médio",
+      "photo": "pretinha.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Tobi",
+      "age": "Adulto",
+      "syze": "Porte pequeno",
+      "photo": "tobi.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Murphy",
+      "age": "Adulto",
+      "syze": "Porte grande",
+      "photo": "murphy.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Snoop",
+      "age": "Filhote",
+      "syze": "Porte pequeno",
+      "photo": "snoop.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Mith",
+      "age": "Adulto",
+      "syze": "Porte médio",
+      "photo": "mith.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Pandora",
+      "age": "Filhote",
+      "syze": "Porte pequeno",
+      "photo": "pandora.jpg"
+    }
+  ]
 }
