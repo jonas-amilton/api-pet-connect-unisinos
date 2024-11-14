@@ -2,28 +2,28 @@
   "users": [
     {
       "id": 1,
-      "email": "a@a.com",
+      "email": "admin@email.com",
       "username": "admin",
       "password": "12345678",
       "isAdmin": true
     },
     {
       "id": 2,
-      "email": "b@b.com",
+      "email": "joao@email.com",
       "username": "Joao",
       "password": "12345678",
       "isAdmin": false
     },
     {
       "id": 4,
-      "email": "c@c.com",
+      "email": "lucas@email.com",
       "username": "Lucas",
       "password": "12345678",
       "isAdmin": false
     },
     {
       "id": 5,
-      "email": "teste",
+      "email": "teste@email.com",
       "username": "teste",
       "password": "12345678",
       "isAdmin": true
