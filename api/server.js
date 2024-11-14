@@ -35,13 +35,13 @@ app.get("/users", (req, res) => {
   });
 });
 
-app.post("/users", (req, res) => {
+app.post("/users/register", (req, res) => {
   const { email, username, password, isAdmin } = req.body;
 
   // Verifique se o usuário já existe no banco de dados
   const existingUser = jsonServerMiddleware.db
     .get("users")
-    .find({ username })
+    .find({ email })
     .value();
 
   if (existingUser) {
@@ -72,7 +72,9 @@ app.post("/users", (req, res) => {
     })
     .write();
 
-  res.json({ success: true, message: "Usuário adicionado com sucesso" });
+  res
+    .status(201)
+    .json({ success: true, message: "Usuário adicionado com sucesso" });
 });
 
 app.post("/users/login", (req, res) => {
