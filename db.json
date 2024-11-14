@@ -4,28 +4,28 @@
       "id": 1,
       "email": "a@a.com",
       "username": "admin",
-      "password": "senha",
+      "password": "12345678",
       "isAdmin": true
     },
     {
       "id": 2,
       "email": "b@b.com",
       "username": "Joao",
-      "password": "senha",
+      "password": "12345678",
       "isAdmin": false
     },
     {
       "id": 4,
       "email": "c@c.com",
       "username": "Lucas",
-      "password": "senha",
+      "password": "12345678",
       "isAdmin": false
     },
     {
       "id": 5,
       "email": "teste",
       "username": "teste",
-      "password": "senha",
+      "password": "12345678",
       "isAdmin": true
     }
   ],
