@@ -76,12 +76,10 @@ app.post("/users", (req, res) => {
 });
 
 app.post("/users/login", (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
 
   const users = jsonServerMiddleware.db.get("users").value();
-  const user = users.find(
-    (u) => u.username === username && u.password === password
-  );
+  const user = users.find((u) => u.email === email && u.password === password);
 
   if (user) {
     res.json({
