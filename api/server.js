@@ -16,6 +16,25 @@ app.get("/", (req, res) => {
 
 // users
 
+app.get("/users", (req, res) => {
+  const allUsers = jsonServerMiddleware.db
+    .get("users")
+    .orderBy("id", "desc")
+    .value();
+
+  if (allUsers.length === 0) {
+    return res
+      .status(400)
+      .json({ success: false, message: "Nenhum usuário cadastrado!" });
+  }
+
+  res.json({
+    success: true,
+    message: "Usuários listados com sucesso",
+    data: allUsers,
+  });
+});
+
 app.post("/users", (req, res) => {
   const { email, username, password, isAdmin } = req.body;
 
