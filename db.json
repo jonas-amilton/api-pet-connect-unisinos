@@ -35,42 +35,56 @@
       "name": "Pretinha",
       "age": "Adulto",
       "size": "Porte médio",
-      "photo": "pretinha.jpg"
+      "photo": "/images/pretinha.jpg"
     },
     {
       "id": 2,
       "name": "Tobi",
       "age": "Adulto",
       "size": "Porte pequeno",
-      "photo": "tobi.jpg"
+      "photo": "/images/tobi.jpg"
     },
     {
       "id": 3,
       "name": "Murphy",
-      "age": "Adulto",
+      "age": "/images/Adulto",
       "size": "Porte grande",
-      "photo": "murphy.jpg"
+      "photo": "/images/murphy.jpg"
     },
     {
       "id": 4,
       "name": "Snoop",
       "age": "Filhote",
       "size": "Porte pequeno",
-      "photo": "snoop.jpg"
+      "photo": "/images/snoop.jpg"
     },
     {
       "id": 5,
       "name": "Mith",
       "age": "Adulto",
       "size": "Porte médio",
-      "photo": "mith.jpg"
+      "photo": "/images/mith.jpg"
     },
     {
       "id": 6,
       "name": "Pandora",
       "age": "Filhote",
       "size": "Porte pequeno",
-      "photo": "pandora.jpg"
+      "photo": "/images/pandora.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Felix",
+      "age": "Filhote",
+      "size": "Porte pequeno",
+      "photo": "/images/1731690161931-pexels-pixabay-45201.jpg"
+    },
+    {
+      "id": 8,
+      "name": "simba",
+      "age": "Jovem",
+      "size": "Porte médio",
+      "photo": "/images/1731691248763-pexels-pixabay-45201.jpg"
     }
   ]
 }
