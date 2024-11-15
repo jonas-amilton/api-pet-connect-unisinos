@@ -3,12 +3,16 @@ const jsonServer = require("json-server");
 const cors = require("cors");
 const app = express();
 const port = 3000;
+const multer = require("multer");
+const path = require("path");
 
 const jsonServerMiddleware = jsonServer.router("db.json");
 
 app.use(cors());
 
 app.use(express.json());
+
+app.use("/images", express.static(path.join(__dirname, "uploads/images/")));
 
 app.get("/", (req, res) => {
   res.send("Hello, World!!!");
@@ -104,10 +108,23 @@ app.post("/users/login", (req, res) => {
 
 // pets
 
-app.post("/pets", (req, res) => {
-  const { name, age, size, photo } = req.body;
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, path.join(__dirname, "uploads/images"));
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+const upload = multer({ storage });
 
-  // Verifique se o pet já existe no banco de dados
+app.post("/pets", upload.single("photo"), (req, res) => {
+  const { name, age, size } = req.body;
+
+  // Caminho da foto salva
+  const photo = `/images/${req.file.filename}`;
+
+  // Verifica se o pet já existe no banco de dados
   const existingPet = jsonServerMiddleware.db
     .get("pets")
     .find({ name })
@@ -119,14 +136,14 @@ app.post("/pets", (req, res) => {
       .json({ success: false, message: "Pet já foi cadastrado!" });
   }
 
-  // Obtenha o último ID do pet no banco de dados
+  // ID do último pet no banco de dados
   const lastPet = jsonServerMiddleware.db
     .get("pets")
     .orderBy("id", "desc")
     .first()
     .value();
 
-  // Calcule o próximo ID disponível
+  // Calcule o próximo ID
   const nextId = lastPet ? lastPet.id + 1 : 1;
 
   // Adicione o novo pet com o próximo ID
@@ -141,7 +158,11 @@ app.post("/pets", (req, res) => {
     })
     .write();
 
-  res.json({ success: true, message: "Pet adicionado com sucesso" });
+  res.json({
+    success: true,
+    message: "Pet adicionado com sucesso",
+    data: { id: nextId, name, age, size, photo },
+  });
 });
 
 app.get("/pets", (req, res) => {
