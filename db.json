@@ -34,42 +34,42 @@
       "id": 1,
       "name": "Pretinha",
       "age": "Adulto",
-      "syze": "Porte médio",
+      "size": "Porte médio",
       "photo": "pretinha.jpg"
     },
     {
       "id": 2,
       "name": "Tobi",
       "age": "Adulto",
-      "syze": "Porte pequeno",
+      "size": "Porte pequeno",
       "photo": "tobi.jpg"
     },
     {
       "id": 3,
       "name": "Murphy",
       "age": "Adulto",
-      "syze": "Porte grande",
+      "size": "Porte grande",
       "photo": "murphy.jpg"
     },
     {
       "id": 4,
       "name": "Snoop",
       "age": "Filhote",
-      "syze": "Porte pequeno",
+      "size": "Porte pequeno",
       "photo": "snoop.jpg"
     },
     {
       "id": 5,
       "name": "Mith",
       "age": "Adulto",
-      "syze": "Porte médio",
+      "size": "Porte médio",
       "photo": "mith.jpg"
     },
     {
       "id": 6,
       "name": "Pandora",
       "age": "Filhote",
-      "syze": "Porte pequeno",
+      "size": "Porte pequeno",
       "photo": "pandora.jpg"
     }
   ]

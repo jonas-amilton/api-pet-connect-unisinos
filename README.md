@@ -108,7 +108,7 @@
 {
   "name": "string",
   "age": "string",
-  "syze": "string",
+  "size": "string",
   "photo": "string"
 }
 ```
@@ -146,7 +146,7 @@
       "id": 1,
       "name": "string",
       "age": "string",
-      "syze": "string",
+      "size": "string",
       "photo": "string"
     }
   ]

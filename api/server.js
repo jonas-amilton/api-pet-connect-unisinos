@@ -105,7 +105,7 @@ app.post("/users/login", (req, res) => {
 // pets
 
 app.post("/pets", (req, res) => {
-  const { name, age, syze, photo } = req.body;
+  const { name, age, size, photo } = req.body;
 
   // Verifique se o pet já existe no banco de dados
   const existingPet = jsonServerMiddleware.db
@@ -136,7 +136,7 @@ app.post("/pets", (req, res) => {
       id: nextId,
       name,
       age,
-      syze,
+      size,
       photo,
     })
     .write();
